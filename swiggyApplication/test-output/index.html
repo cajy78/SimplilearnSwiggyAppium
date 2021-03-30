@@ -138,19 +138,13 @@
                   <a name="buyFood">
                   </a> <!-- buyFood -->
                   <span class="method-name">buyFood</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
@@ -167,22 +161,16 @@ Driver info: driver.version: AndroidDriver
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:84)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:94)
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:95)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.setup(AccountLoginAndBuyFood.java:41)
+	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
 	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 37 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+	... 33 more
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
 	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
 	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
@@ -196,8 +184,8 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
 	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
 	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 42 more
-... Removed 33 stack frames
+	... 38 more
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -206,19 +194,13 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
                   <a name="runAccountLogin">
                   </a> <!-- runAccountLogin -->
                   <span class="method-name">runAccountLogin</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
@@ -235,22 +217,16 @@ Driver info: driver.version: AndroidDriver
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:84)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:94)
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:95)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.setup(AccountLoginAndBuyFood.java:41)
+	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
 	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 37 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+	... 33 more
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
 	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
 	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
@@ -264,8 +240,8 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
 	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
 	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 42 more
-... Removed 33 stack frames
+	... 38 more
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -282,19 +258,13 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
                   <a name="runSearchTest">
                   </a> <!-- runSearchTest -->
                   <span class="method-name">runSearchTest</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
@@ -311,22 +281,16 @@ Driver info: driver.version: AndroidDriver
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:84)
 	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:94)
 	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:95)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:43)
+	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
 	at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:186)
-	... 37 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
+	... 33 more
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Error getting device platform version. Original error: Error executing adbExec. Original error: &apos;Command &apos;C:\\Users\\cajy7\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe -P 5037 -s RZ8MC1GWJ0L shell getprop ro.build.version.release&apos; exited with code 1&apos;; Stderr: &apos;adb.exe: device unauthorized.
-This adb server&apos;s $ADB_VENDOR_KEYS is not set
-Try &apos;adb kill-server&apos; if that seems wrong.
-Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&apos;
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the &apos;in.swiggy.android&apos; application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: &apos;in.swiggy.android.activities.NewUserExperienceActivity&apos; or &apos;in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity&apos; never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
+    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
 	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
 	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
@@ -340,8 +304,8 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
 	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
 	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
-	... 42 more
-... Removed 33 stack frames
+	... 38 more
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -366,8 +330,8 @@ Otherwise check for a confirmation dialog on your device.&apos;; Code: &apos;1&a
   &lt;/test&gt; &lt;!-- SearchRegression --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;AccountLogin&quot;&gt;
     &lt;parameter name=&quot;phoneNumber&quot; value=&quot;9619127329&quot;/&gt;
-    &lt;parameter name=&quot;searchType&quot; value=&quot;dish&quot;/&gt;
-    &lt;parameter name=&quot;searchTypeValue&quot; value=&quot;fish&quot;/&gt;
+    &lt;parameter name=&quot;searchType&quot; value=&quot;restaurant&quot;/&gt;
+    &lt;parameter name=&quot;searchTypeValue&quot; value=&quot;mcdonalds&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;simpliLearn.swiggyApplication.AccountLoginAndBuyFood&quot;/&gt;
     &lt;/classes&gt;
@@ -456,38 +420,26 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">simpliLearn.swiggyApplication.Search</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
+              <div class="configuration-suite before">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup</span>
-                <span class="method-start">6033 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">simpliLearn.swiggyApplication.Search</div> <!-- chronological-class-name -->
+              </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">runSearchTest</span>
-                <span class="method-start">-1617089151511 ms</span>
+                <span class="method-start">-1617098092633 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">runAccountLogin</span>
-                <span class="method-start">-1617089151511 ms</span>
+                <span class="method-start">-1617098092633 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">buyFood</span>
-                <span class="method-start">-1617089151511 ms</span>
+                <span class="method-start">-1617098092633 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

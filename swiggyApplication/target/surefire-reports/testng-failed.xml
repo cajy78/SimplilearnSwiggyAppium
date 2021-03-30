@@ -16,13 +16,13 @@
   </test> <!-- SearchRegression(failed) -->
   <test thread-count="5" verbose="0" name="AccountLogin(failed)">
     <parameter name="phoneNumber" value="9619127329"/>
-    <parameter name="searchType" value="dish"/>
-    <parameter name="searchTypeValue" value="fish"/>
+    <parameter name="searchType" value="restaurant"/>
+    <parameter name="searchTypeValue" value="mcdonalds"/>
     <classes>
       <class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood">
         <methods>
-          <include name="runAccountLogin" invocation-numbers="0"/>
-          <include name="buyFood" invocation-numbers="0"/>
+          <include name="runAccountLogin"/>
+          <include name="buyFood"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>

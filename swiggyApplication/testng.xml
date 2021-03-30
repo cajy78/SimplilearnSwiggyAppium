@@ -10,8 +10,8 @@
 	</test>
 	<test thread-count="5" name="AccountLogin">
 		<parameter name="phoneNumber" value="9619127329" />
-		<parameter name="searchType" value="dish" />
-		<parameter name="searchTypeValue" value="fish" />
+		<parameter name="searchType" value="restaurant" />
+		<parameter name="searchTypeValue" value="mcdonalds" />
 		<classes>
 			<class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" />
 		</classes>

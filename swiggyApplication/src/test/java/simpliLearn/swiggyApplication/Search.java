@@ -1,24 +1,16 @@
 package simpliLearn.swiggyApplication;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -35,7 +27,7 @@ public class Search extends TestCase {
 	private AndroidDriver driver;
 	private DeviceTypes testDeviceType;
 
-	@BeforeTest
+	@BeforeSuite
 	public void setup() throws Throwable {
 		testDeviceType = initiateDeviceType();
 		DesiredCapabilities desiredCapabilities = AppiumSetup.getCapabilitiesOfDevice(testDeviceType);
@@ -44,8 +36,9 @@ public class Search extends TestCase {
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestProperties.getWaitTimeoutConfig()),
 				TimeUnit.SECONDS);
 	}
+	
 
-	@Test
+	@Test(priority=1)
 	@Parameters({ "searchType", "searchTypeValue" })
 	public void runSearchTest(String searchType, String searchTypeValue) throws Throwable {
 

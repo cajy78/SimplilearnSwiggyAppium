@@ -1,9 +1,9 @@
 package simpliLearn.swiggyApplication;
 
+import static org.testng.Assert.assertThrows;
+
 import java.net.URL;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -29,8 +29,8 @@ import io.appium.java_client.touch.offset.PointOption;
 public class AccountLoginAndBuyFood extends TestCase {
 
 	private AndroidDriver driver;
-	// private Scanner inPut;
-
+	//private Scanner inPut;
+	private WebDriverWait wait;
 	private DeviceTypes testDeviceType;
 
 	@BeforeTest
@@ -41,9 +41,10 @@ public class AccountLoginAndBuyFood extends TestCase {
 		driver = new AndroidDriver(remoteUrl, desiredCapabilities);
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestProperties.getWaitTimeoutConfig()),
 				TimeUnit.SECONDS);
+		wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 2)
 	@Parameters({ "phoneNumber" })
 	public void runAccountLogin(String phoneNumber) throws Throwable {
 		if (!checkPhoneNumber(phoneNumber) || phoneNumber.length() != 10) {
@@ -111,20 +112,23 @@ public class AccountLoginAndBuyFood extends TestCase {
 //			int otp = inPut.nextInt();
 //			MobileElement otpField = (MobileElement) driver.findElementById("in.swiggy.android:id/otpField");
 //			otpField.sendKeys(String.valueOf(otp));
-			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+			//WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("in.swiggy.android:id/forgotPasswordSubmitBtn")));
 			MobileElement otpSubmit = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/forgotPasswordSubmitBtn");
 			otpSubmit.click();
-
-			MobileElement userDetails = (MobileElement) driver.findElementById("USERNAME");
-			String loggedInUser = userDetails.getText();
-			System.out.println(loggedInUser);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.view.ViewGroup[@content-desc=\"EDIT\"]")));
+			MobileElement editDetails = (MobileElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\"EDIT\"]");
+			editDetails.click();
+			MobileElement accountPhoneNumber = (MobileElement) driver.findElementById("in.swiggy.android:id/edit_account__phone_et");
+			String loggedInUser = accountPhoneNumber.getText();
+			System.out.println(accountPhoneNumber);
+			driver.navigate().back();
 			// Assert.assertEquals(userDetails, phoneNumber);
 		}
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 3)
 	@Parameters({ "searchType", "searchTypeValue" })
 	public void buyFood(String searchType, String searchTypeValue) throws Throwable {
 		if (!searchType.equalsIgnoreCase("resto") && !searchType.equalsIgnoreCase("restaurant")
@@ -144,7 +148,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				//WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
@@ -183,32 +187,32 @@ public class AccountLoginAndBuyFood extends TestCase {
 						MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
 						addToCart.click();
 					}
-
-					MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
-					viewCart.click();
-					if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
-						MobileElement selectAddress = (MobileElement) driver
-								.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
-						selectAddress.click();
-					}
-
-					MobileElement proceedToPay = (MobileElement) driver
-							.findElementByXPath("//*[contains(@text, 'PAY')]");
-					proceedToPay.click();
-					if (checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
-						MobileElement cancelationPolicyUnderstand = (MobileElement) driver
-								.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
-						cancelationPolicyUnderstand.click();
-					}
-					MobileElement billTotal = (MobileElement) driver
-							.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
-					System.out.println("Total Bill to be paid is: " + billTotal.getText());
+//
+//					MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
+//					viewCart.click();
+//					if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
+//						MobileElement selectAddress = (MobileElement) driver
+//								.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
+//						selectAddress.click();
+//					}
+//
+//					MobileElement proceedToPay = (MobileElement) driver
+//							.findElementByXPath("//*[contains(@text, 'PAY')]");
+//					proceedToPay.click();
+//					if (clickabilityWaitByXPath("//*[contains(@text,\"UNDERSTAND\")]",wait) && checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
+//						MobileElement cancelationPolicyUnderstand = (MobileElement) driver
+//								.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
+//						cancelationPolicyUnderstand.click();
+//					}
+//					MobileElement billTotal = (MobileElement) driver
+//							.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
+//					System.out.println("Total Bill to be paid is: " + billTotal.getText());
 				}
 			} else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				//WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
@@ -239,25 +243,37 @@ public class AccountLoginAndBuyFood extends TestCase {
 					MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
 					addToCart.click();
 				}
+			}
+			
+			MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/bottom_bar_cart_title");
+			viewCart.click();
+			if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
+				MobileElement selectAddress = (MobileElement) driver
+						.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
+				selectAddress.click();
+				MobileElement addressLine = (MobileElement) driver.findElementById("in.swiggy.android:id/cartAddressLineOne");
+				addressLine.click();
+			}
 
-				MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
-				viewCart.click();
-				if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
-					MobileElement selectAddress = (MobileElement) driver
-							.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
-					selectAddress.click();
+			MobileElement proceedToPay = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'PAY')]");
+			proceedToPay.click();
+			if (clickabilityWaitByXPath("//*[contains(@text,\"UNDERSTAND\")]",wait)) {
+				if(checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
+				MobileElement cancelationPolicyUnderstand = (MobileElement) driver
+						.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
+				cancelationPolicyUnderstand.click();
 				}
-
-				MobileElement proceedToPay = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'PAY')]");
-				proceedToPay.click();
-				if (checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
-					MobileElement cancelationPolicyUnderstand = (MobileElement) driver
-							.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
-					cancelationPolicyUnderstand.click();
-				}
-				MobileElement billTotal = (MobileElement) driver
-						.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
-				System.out.println("Total Bill to be paid is: " + billTotal.getText());
+			}
+			MobileElement billTotal = (MobileElement) driver
+					.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
+			System.out.println("Total Bill to be paid is: " + billTotal.getText());
+			if(checkElementDisplayedByXpath("//*[contains(@text,\"PREFERRED PAYMENT\")]"))
+			{
+				Assert.assertTrue(true);
+			}
+			else
+			{
+				throw new RuntimeException("Failed to reach the payment details and confirmation page");
 			}
 		}
 	}
@@ -265,6 +281,15 @@ public class AccountLoginAndBuyFood extends TestCase {
 	private boolean checkElementDisplayedById(String id) {
 		try {
 			driver.findElementById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	private boolean clickabilityWaitByXPath(String xpath, WebDriverWait wait) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -299,7 +324,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 		}
 	}
 
-	@AfterTest
+	@AfterSuite
 	public void tearDown() throws Throwable {
 		if (!driver.equals(null))
 			driver.quit();

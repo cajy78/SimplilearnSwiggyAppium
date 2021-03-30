@@ -2,14 +2,19 @@ package simpliLearn.swiggyApplication;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeSuite;
 
+import appium.AppiumSetup;
 import appium.TestProperties;
 import appium.AppiumSetup.DeviceTypes;
 import io.appium.java_client.android.AndroidDriver;
@@ -17,6 +22,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class TestCase {
 
 	private DeviceTypes deviceType;
+	public AndroidDriver driver;
 	
 	public DeviceTypes initiateDeviceType()
 	{
