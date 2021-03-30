@@ -20,7 +20,7 @@ public class TestCase {
 	
 	public DeviceTypes initiateDeviceType()
 	{
-		deviceType = DeviceTypes.GalaxyA30s_swiggy;
+		deviceType = DeviceTypes.Oneplus8t_A11_swiggy;
 		return deviceType;
 	}
 	

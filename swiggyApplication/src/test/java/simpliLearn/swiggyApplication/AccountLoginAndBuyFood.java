@@ -29,7 +29,7 @@ import io.appium.java_client.touch.offset.PointOption;
 public class AccountLoginAndBuyFood extends TestCase {
 
 	private AndroidDriver driver;
-	private Scanner inPut;
+	// private Scanner inPut;
 
 	private DeviceTypes testDeviceType;
 
@@ -59,11 +59,16 @@ public class AccountLoginAndBuyFood extends TestCase {
 
 			switch (testDeviceType) {
 			case GalaxyA30s_swiggy:
-				MobileElement initLocationPermission = (MobileElement) driver
+				MobileElement initLocationPermission_g = (MobileElement) driver
 						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
-				initLocationPermission.click();
+				initLocationPermission_g.click();
 				break;
 			case Android10:
+				break;
+			case Oneplus8t_A11_swiggy:
+				MobileElement initLocationPermission_op = (MobileElement) driver
+						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
+				initLocationPermission_op.click();
 				break;
 			case Android10_Dialer:
 				break;
@@ -106,11 +111,14 @@ public class AccountLoginAndBuyFood extends TestCase {
 			MobileElement continueLogin = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/loginCheckButton");
 			continueLogin.click();
-			System.out.println("Enter the One Time Pin received to login via phone number");
-			inPut = new Scanner(System.in);
-			int otp = inPut.nextInt();
-			MobileElement otpField = (MobileElement) driver.findElementById("in.swiggy.android:id/otpField");
-			otpField.sendKeys(String.valueOf(otp));
+			// Thread.sleep(10000);
+//			System.out.println("Enter the One Time Pin received to login via phone number");
+//			inPut = new Scanner(System.in);
+//			int otp = inPut.nextInt();
+//			MobileElement otpField = (MobileElement) driver.findElementById("in.swiggy.android:id/otpField");
+//			otpField.sendKeys(String.valueOf(otp));
+			WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+			wait.until(ExpectedConditions.elementToBeClickable(By.id("in.swiggy.android:id/forgotPasswordSubmitBtn")));
 			MobileElement otpSubmit = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/forgotPasswordSubmitBtn");
 			otpSubmit.click();
@@ -225,9 +233,8 @@ public class AccountLoginAndBuyFood extends TestCase {
 //					throw new RuntimeException(
 //							"A problem occurred due to which no search results were found or search value has a problem");
 //				}
-				
-				MobileElement addItem = (MobileElement) driver
-						.findElementByXPath("//*[@content-desc=\"Add Item\"]");
+
+				MobileElement addItem = (MobileElement) driver.findElementByXPath("//*[@content-desc=\"Add Item\"]");
 				addItem.click();
 				while (checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button")) {
 					MobileElement continueButton = (MobileElement) driver
@@ -247,8 +254,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 					selectAddress.click();
 				}
 
-				MobileElement proceedToPay = (MobileElement) driver
-						.findElementByXPath("//*[contains(@text, 'PAY')]");
+				MobileElement proceedToPay = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'PAY')]");
 				proceedToPay.click();
 				if (checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
 					MobileElement cancelationPolicyUnderstand = (MobileElement) driver
@@ -303,6 +309,6 @@ public class AccountLoginAndBuyFood extends TestCase {
 	public void tearDown() throws Throwable {
 		if (!driver.equals(null))
 			driver.quit();
-		inPut.close();
+		// inPut.close();
 	}
 }

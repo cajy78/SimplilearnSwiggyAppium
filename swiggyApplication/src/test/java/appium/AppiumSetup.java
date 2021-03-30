@@ -4,7 +4,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AppiumSetup {
 	public enum DeviceTypes {
-		Android10, iOS, Android7, Android10_Dialer, GalaxyA30s_swiggy
+		Android10, iOS, Android7, Android10_Dialer, GalaxyA30s_swiggy, Oneplus8t_A11_swiggy
 	}
 
 	public static DesiredCapabilities getCapabilitiesOfDevice(DeviceTypes type) {
@@ -17,6 +17,8 @@ public class AppiumSetup {
 			return createAndroid10CapabilitiesForDialer();
 		case GalaxyA30s_swiggy:
 			return createGalaxyA30sSwiggyCapabilities();
+		case Oneplus8t_A11_swiggy:
+			return createOneplus8tSwiggyCapabilities();
 		default:
 			throw new RuntimeException("Device type invalid" + type);
 		}
@@ -39,6 +41,18 @@ public class AppiumSetup {
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("platformVersion", "10");
 		desiredCapabilities.setCapability("deviceName", "Galaxy A30s");
+		desiredCapabilities.setCapability("appPackage", "in.swiggy.android");
+		desiredCapabilities.setCapability("appActivity", "in.swiggy.android.activities.HomeActivity");
+		desiredCapabilities.setCapability("appWaitActivity", "in.swiggy.android.activities.NewUserExperienceActivity");
+		desiredCapabilities.setCapability("ensureWebviewsHavePages", true);
+		return desiredCapabilities;
+	}
+	
+	private static DesiredCapabilities createOneplus8tSwiggyCapabilities() {
+		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		desiredCapabilities.setCapability("platformName", "Android");
+		desiredCapabilities.setCapability("platformVersion", "11");
+		desiredCapabilities.setCapability("deviceName", "Cajy's OnePlus 8T");
 		desiredCapabilities.setCapability("appPackage", "in.swiggy.android");
 		desiredCapabilities.setCapability("appActivity", "in.swiggy.android.activities.HomeActivity");
 		desiredCapabilities.setCapability("appWaitActivity", "in.swiggy.android.activities.NewUserExperienceActivity");

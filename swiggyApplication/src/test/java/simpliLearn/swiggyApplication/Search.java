@@ -64,13 +64,18 @@ public class Search extends TestCase {
 
 			switch (testDeviceType) {
 			case GalaxyA30s_swiggy:
-				MobileElement initLocationPermission = (MobileElement) driver
+				MobileElement initLocationPermission_g = (MobileElement) driver
 						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
-				initLocationPermission.click();
+				initLocationPermission_g.click();
 				break;
 			case Android10:
 				break;
 			case Android10_Dialer:
+				break;
+			case Oneplus8t_A11_swiggy:
+				MobileElement initLocationPermission_op = (MobileElement) driver
+						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
+				initLocationPermission_op.click();
 				break;
 			case Android7:
 				MobileElement initLocationPermission_emu7 = (MobileElement) driver
@@ -111,14 +116,14 @@ public class Search extends TestCase {
 				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
-				List<MobileElement> searchResults = driver.findElementsByXPath(
-						"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
-						+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
-						+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-						+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");//// *[@id='in.swiggy.android:id/search_results']/android.view.ViewGroup");
-																																																																																																																											//// ///hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup
+				List<MobileElement> searchResults = driver
+						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");//// *[@id='in.swiggy.android:id/search_results']/android.view.ViewGroup");
+																											//// ///hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 				MobileElement restaurantSearch;
@@ -143,17 +148,17 @@ public class Search extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				//Thread.sleep(5000);
+				// Thread.sleep(5000);
 				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
-				List<MobileElement> searchResults = driver.findElementsByXPath(
-						"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
-						+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
-						+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-						+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
+				List<MobileElement> searchResults = driver
+						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 
