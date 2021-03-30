@@ -30,9 +30,15 @@ public class TestProperties {
 		return prop.getProperty("screenshot.location");
 	}
 	
-	public static String getWaitTimeoutConfig()
+	public static String getImplicitWaitTimeoutConfig()
 	{
 		getPropertiesFile();
-		return prop.getProperty("wait.timeout");
+		return prop.getProperty("implicitwait.timeout");
+	}
+	
+	public static String getExplicitWaitTimeoutConfig()
+	{
+		getPropertiesFile();
+		return prop.getProperty("explicitwait.timeout");
 	}
 }

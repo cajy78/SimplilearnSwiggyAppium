@@ -33,7 +33,7 @@ public class Search extends TestCase {
 		DesiredCapabilities desiredCapabilities = AppiumSetup.getCapabilitiesOfDevice(testDeviceType);
 		URL remoteUrl = new URL(TestProperties.getAppiumServerURL());
 		driver = new AndroidDriver(remoteUrl, desiredCapabilities);
-		driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestProperties.getWaitTimeoutConfig()),
+		driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestProperties.getImplicitWaitTimeoutConfig()),
 				TimeUnit.SECONDS);
 	}
 	
@@ -100,7 +100,7 @@ public class Search extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getExplicitWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
@@ -135,8 +135,7 @@ public class Search extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				// Thread.sleep(5000);
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getExplicitWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
