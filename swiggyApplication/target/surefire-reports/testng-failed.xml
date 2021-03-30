@@ -21,8 +21,8 @@
     <classes>
       <class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood">
         <methods>
-          <include name="runAccountLogin"/>
-          <include name="buyFood"/>
+          <include name="runAccountLogin" invocation-numbers="0"/>
+          <include name="buyFood" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>

@@ -68,10 +68,6 @@ public class Search extends TestCase {
 						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
 				initLocationPermission_g.click();
 				break;
-			case Android10:
-				break;
-			case Android10_Dialer:
-				break;
 			case Oneplus8t_A11_swiggy:
 				MobileElement initLocationPermission_op = (MobileElement) driver
 						.findElementById("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
@@ -90,8 +86,6 @@ public class Search extends TestCase {
 				loc_emu7.sendKeys("Thane");
 				MobileElement selectLoc = (MobileElement) driver.findElementByXPath("//*[@text=\"Thane West\"]");
 				selectLoc.click();
-				break;
-			case iOS:
 				break;
 			default:
 				break;

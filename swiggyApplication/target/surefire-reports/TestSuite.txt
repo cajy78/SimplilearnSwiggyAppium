@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 2, Errors: 0, Skipped: 5, Time elapsed: 100.619 s <<< FAILURE! - in TestSuite
-setup(simpliLearn.swiggyApplication.Search)  Time elapsed: 56.516 s  <<< FAILURE!
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 2, Time elapsed: 240.046 s <<< FAILURE! - in TestSuite
+setup(simpliLearn.swiggyApplication.Search)  Time elapsed: 56.956 s  <<< FAILURE!
 org.openqa.selenium.SessionNotCreatedException: 
-Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized within 30000ms timeout. Make sure the application under test does not crash and investigate the logcat output. You could also try to increase the value of 'uiautomator2ServerLaunchTimeout' capability
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized within 30000ms timeout. Make sure the application under test does not crash and investigate the logcat output. You could also try to increase the value of 'uiautomator2ServerLaunchTimeout' capability
     at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
     at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -18,37 +18,38 @@ Driver info: driver.version: AndroidDriver
 Caused by: java.lang.reflect.InvocationTargetException
 	at simpliLearn.swiggyApplication.Search.setup(Search.java:43)
 Caused by: org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized within 30000ms timeout. Make sure the application under test does not crash and investigate the logcat output. You could also try to increase the value of 'uiautomator2ServerLaunchTimeout' capability
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized within 30000ms timeout. Make sure the application under test does not crash and investigate the logcat output. You could also try to increase the value of 'uiautomator2ServerLaunchTimeout' capability
     at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
     at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
 	at simpliLearn.swiggyApplication.Search.setup(Search.java:43)
 
-setup(simpliLearn.swiggyApplication.AccountLoginAndBuyFood)  Time elapsed: 99.807 s  <<< FAILURE!
-org.openqa.selenium.SessionNotCreatedException: 
-Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
+runAccountLogin(simpliLearn.swiggyApplication.AccountLoginAndBuyFood)  Time elapsed: 66.189 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: in.swiggy.android:id/forgotPasswordSubmitBtn (tried for 30 second(s) with 500 milliseconds interval)
+	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.runAccountLogin(AccountLoginAndBuyFood.java:121)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy's OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 0d253dd8-d2ef-4f12-b574-c02df9fe7898
+*** Element info: {Using=id, value=in.swiggy.android:id/forgotPasswordSubmitBtn}
+	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.runAccountLogin(AccountLoginAndBuyFood.java:121)
+
+buyFood(simpliLearn.swiggyApplication.AccountLoginAndBuyFood)  Time elapsed: 97.252 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.setup(AccountLoginAndBuyFood.java:41)
-Caused by: java.lang.reflect.InvocationTargetException
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.setup(AccountLoginAndBuyFood.java:41)
-Caused by: org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Users\cajy7\AppData\Roaming\npm\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.setup(AccountLoginAndBuyFood.java:41)
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy's OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 0d253dd8-d2ef-4f12-b574-c02df9fe7898
+*** Element info: {Using=id, value=in.swiggy.android:id/cart_icon}
+	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.buyFood(AccountLoginAndBuyFood.java:249)
 
