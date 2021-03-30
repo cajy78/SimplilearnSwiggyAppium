@@ -43,7 +43,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 				TimeUnit.SECONDS);
 	}
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	@Parameters({ "phoneNumber" })
 	public void runAccountLogin(String phoneNumber) throws Throwable {
 		if (!checkPhoneNumber(phoneNumber) || phoneNumber.length() != 10) {
@@ -145,13 +145,13 @@ public class AccountLoginAndBuyFood extends TestCase {
 				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
 				wait.until(ExpectedConditions
 						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
-				List<MobileElement> searchResults = driver.findElementsByXPath(
-						"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
-						+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
-						+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-						+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
-						+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
+				List<MobileElement> searchResults = driver
+						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 				MobileElement restaurantSearch;
@@ -161,99 +161,65 @@ public class AccountLoginAndBuyFood extends TestCase {
 					restaurantSearch.click();
 					if (checkRatingDialogPopup())
 						driver.navigate().back();
-					//String restName = driver.findElementById("in.swiggy.android:id/restaurant_name").getText();
+					// String restName =
+					// driver.findElementById("in.swiggy.android:id/restaurant_name").getText();
 					takeScreenShot("RestaurantClicked", driver);
-					
+
 					TouchAction action = new TouchAction(driver);
-					action.longPress(PointOption.point(310, 1160)).moveTo(PointOption.point(310, 1000)).release().perform();
-					
+					action.longPress(PointOption.point(310, 1160)).moveTo(PointOption.point(310, 1000)).release()
+							.perform();
+
 					MobileElement addItem = (MobileElement) driver
 							.findElementByXPath("//*[@content-desc=\"Add Item\"]");
 					addItem.click();
-					while(checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button"))
-					{
-						MobileElement continueButton = (MobileElement) driver.findElementById("in.swiggy.android:id/progressive_variants_continue_button");
+					while (checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button")) {
+						MobileElement continueButton = (MobileElement) driver
+								.findElementById("in.swiggy.android:id/progressive_variants_continue_button");
 						continueButton.click();
 					}
-					if(checkElementDisplayedByXpath("//*[@text=\"ADD ITEM\"]"))
-					{
+					if (checkElementDisplayedByXpath("//*[@text=\"ADD ITEM\"]")) {
 						MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
 						addToCart.click();
 					}
-					
+
 					MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
 					viewCart.click();
-					if(checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]"))
-					{
-						MobileElement selectAddress = (MobileElement) driver.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
+					if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
+						MobileElement selectAddress = (MobileElement) driver
+								.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
 						selectAddress.click();
 					}
-					
-					MobileElement proceedToPay = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'PAY')]");
+
+					MobileElement proceedToPay = (MobileElement) driver
+							.findElementByXPath("//*[contains(@text, 'PAY')]");
 					proceedToPay.click();
-					if(checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]"))
-					{
-						MobileElement cancelationPolicyUnderstand = (MobileElement) driver.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
+					if (checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
+						MobileElement cancelationPolicyUnderstand = (MobileElement) driver
+								.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
 						cancelationPolicyUnderstand.click();
 					}
-					MobileElement billTotal = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
-					System.out.println("Total Bill to be paid is: "+billTotal.getText());
-//					if (restName.equalsIgnoreCase(searchTypeValue))
-//						Assert.assertTrue(true);
-//					else
-//						Assert.assertTrue(false);
-//				} else if (searchResults.size() <= 1) {
-//					Assert.assertTrue(false);
-//				} else {
-//					Assert.assertTrue(false);
-//				}
+					MobileElement billTotal = (MobileElement) driver
+							.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
+					System.out.println("Total Bill to be paid is: " + billTotal.getText());
+				}
+			} else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
+				searchBar.sendKeys(searchTypeValue);
+				takeScreenShot("SearchValueEntered", driver);
+				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
+				Thread.sleep(5000);
+				List<MobileElement> searchResults = driver
+						.findElementsByXPath("//*[contains(@text,'" + searchTypeValue + "')]");
+				System.out.println("Number of elements found: " + searchResults.size());
+				takeScreenShot("SearchResultsFound", driver);
+
+				if (searchResults.size() > 1) {
+					Assert.assertTrue(true);
+				} else if (searchResults.size() <= 1) {
+					throw new RuntimeException(
+							"A problem occurred due to which no search results were found or search value has a problem");
 				}
 			}
-//			else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
-//			searchBar.sendKeys(searchTypeValue);
-//			takeScreenShot("SearchValueEntered", driver);
-//			driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-//			Thread.sleep(5000);
-//			List<MobileElement> searchResults = driver
-//					.findElementsByXPath("//*[contains(@text,'" + searchTypeValue + "')]");
-//			System.out.println("Number of elements found: " + searchResults.size());
-//			takeScreenShot("SearchResultsFound", driver);
-//
-//			if (searchResults.size() > 1) {
-//				Assert.assertTrue(true);
-//			} else if (searchResults.size() <= 1) {
-//				throw new RuntimeException(
-//						"A problem occurred due to which no search results were found or search value has a problem");
-//			}
-//		}
-
 		}
-//		MobileElement initiateSearch = (MobileElement) driver
-//				.findElementById("in.swiggy.android:id/bottom_bar_explore");
-//		initiateSearch.click();
-//		takeScreenShot("SearchClicked", driver);
-//		MobileElement searchBar = (MobileElement) driver
-//				.findElementByXPath("//*[@text=\"Search for restaurants and food\"]"); // ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText");
-//		searchBar.click();
-//		searchBar.sendKeys(foodItem);
-//		driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-//		Thread.sleep(3000);
-//		List<MobileElement> dishItems = driver
-//				.findElementsByXPath("//*[contains(@text,'" + foodItem + "')]");
-//		Iterator i = dishItems.iterator();
-//		
-//		while(i.hasNext())
-//		{
-//			MobileElement addItem = (MobileElement) driver.findElementByXPath("//android.widget.RelativeLayout[@content-desc=\"Add Item\"]");
-//			addItem.click();
-//			if(checkElementDisplayed("in.swiggy.android:id/add_item"))
-//			{
-//				MobileElement addVariant = (MobileElement) driver.findElementById("in.swiggy.android:id/add_item");
-//				addVariant.click();
-//			}
-//			MobileElement cart = (MobileElement) driver.findElementById("in.swiggy.android:id/bottom_bar_cart");
-//			cart.click();
-//		}
 	}
 
 	private boolean checkElementDisplayedById(String id) {
@@ -264,7 +230,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 			return false;
 		}
 	}
-	
+
 	private boolean checkElementDisplayedByXpath(String xpath) {
 		try {
 			driver.findElementByXPath(xpath);
@@ -273,7 +239,6 @@ public class AccountLoginAndBuyFood extends TestCase {
 			return false;
 		}
 	}
-
 
 	public boolean checkRatingDialogPopup() {
 		try {
