@@ -9,60 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Regression_Swiggy</th></tr>
-<tr><td><a href="#t0">AccountLogin</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">197,630</td><td></td><td></td></tr>
+<tr><td><a href="#t0">SearchRegression</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">54,253</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression_Swiggy</th></tr></tbody><tbody id="t0"><tr><th colspan="4">AccountLogin &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1617081395590</td><td rowspan="1">65</td></tr><tr><th colspan="4">AccountLogin &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</td><td><a href="#m1">buyFood</a></td><td rowspan="1">1617081395480</td><td rowspan="1">107</td></tr><tr class="failedeven"><td><a href="#m2">runAccountLogin</a></td><td rowspan="1">1617081219452</td><td rowspan="1">176007</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression_Swiggy</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SearchRegression &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">simpliLearn.swiggyApplication.Search</td><td><a href="#m0">runSearchTest</a></td><td rowspan="1">1617087180902</td><td rowspan="1">27955</td></tr></tbody>
 </table>
-<h2>AccountLogin</h2><h3 id="m0">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Galaxy A30s, ensureWebviewsHavePages: true, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: samsung, deviceModel: SM-A307FN, deviceName: RZ8MC1GWJ0L, deviceScreenDensity: 280, deviceScreenSize: 720x1560, deviceUDID: RZ8MC1GWJ0L, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.75, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 53, takesScreenshot: true, viewportRect: {height: 1370, left: 0, top: 53, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 00ee911b-f8e7-428f-bb6a-d713ada0e6ec
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:46)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:452)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.tearDown(AccountLoginAndBuyFood.java:300)
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#buyFood</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>restaurant</td><td>Subway</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Galaxy A30s, ensureWebviewsHavePages: true, platformName: android, platformVersion: 10}, deviceApiLevel: 29, deviceManufacturer: samsung, deviceModel: SM-A307FN, deviceName: RZ8MC1GWJ0L, deviceScreenDensity: 280, deviceScreenSize: 720x1560, deviceUDID: RZ8MC1GWJ0L, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 1.75, platform: LINUX, platformName: Android, platformVersion: 10, statBarHeight: 53, takesScreenshot: true, viewportRect: {height: 1370, left: 0, top: 53, width: 720}, warnings: {}, webStorageEnabled: false}
-Session ID: 00ee911b-f8e7-428f-bb6a-d713ada0e6ec
-*** Element info: {Using=id, value=in.swiggy.android:id/bottom_bar_explore}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
-	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
-	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.buyFood(AccountLoginAndBuyFood.java:134)
-... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#runAccountLogin</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>9619127329</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.util.InputMismatchException
-	at java.util.Scanner.throwFor(Scanner.java:864)
-	at java.util.Scanner.next(Scanner.java:1485)
-	at java.util.Scanner.nextInt(Scanner.java:2117)
-	at java.util.Scanner.nextInt(Scanner.java:2076)
-	at simpliLearn.swiggyApplication.AccountLoginAndBuyFood.runAccountLogin(AccountLoginAndBuyFood.java:111)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>SearchRegression</h2><h3 id="m0">simpliLearn.swiggyApplication.Search#runSearchTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>dish</td><td>fish</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

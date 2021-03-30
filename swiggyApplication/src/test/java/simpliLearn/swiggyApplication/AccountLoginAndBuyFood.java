@@ -219,12 +219,45 @@ public class AccountLoginAndBuyFood extends TestCase {
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 
-				if (searchResults.size() > 1) {
-					Assert.assertTrue(true);
-				} else if (searchResults.size() <= 1) {
-					throw new RuntimeException(
-							"A problem occurred due to which no search results were found or search value has a problem");
+//				if (searchResults.size() > 1) {
+//					Assert.assertTrue(true);
+//				} else if (searchResults.size() <= 1) {
+//					throw new RuntimeException(
+//							"A problem occurred due to which no search results were found or search value has a problem");
+//				}
+				
+				MobileElement addItem = (MobileElement) driver
+						.findElementByXPath("//*[@content-desc=\"Add Item\"]");
+				addItem.click();
+				while (checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button")) {
+					MobileElement continueButton = (MobileElement) driver
+							.findElementById("in.swiggy.android:id/progressive_variants_continue_button");
+					continueButton.click();
 				}
+				if (checkElementDisplayedByXpath("//*[@text=\"ADD ITEM\"]")) {
+					MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
+					addToCart.click();
+				}
+
+				MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
+				viewCart.click();
+				if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
+					MobileElement selectAddress = (MobileElement) driver
+							.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
+					selectAddress.click();
+				}
+
+				MobileElement proceedToPay = (MobileElement) driver
+						.findElementByXPath("//*[contains(@text, 'PAY')]");
+				proceedToPay.click();
+				if (checkElementDisplayedByXpath("//*[contains(@text,\"UNDERSTAND\")]")) {
+					MobileElement cancelationPolicyUnderstand = (MobileElement) driver
+							.findElementByXPath("//*[contains(@text,\"UNDERSTAND\")]");
+					cancelationPolicyUnderstand.click();
+				}
+				MobileElement billTotal = (MobileElement) driver
+						.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
+				System.out.println("Total Bill to be paid is: " + billTotal.getText());
 			}
 		}
 	}
