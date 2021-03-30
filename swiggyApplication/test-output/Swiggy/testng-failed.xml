@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Swiggy]">
+  <test thread-count="5" name="SearchRegression(failed)">
+    <parameter name="searchType" value="dish"/>
+    <parameter name="searchTypeValue" value="fish curry"/>
+    <classes>
+      <class name="simpliLearn.swiggyApplication.Search">
+        <methods>
+          <include name="runSearchTest" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- simpliLearn.swiggyApplication.Search -->
+    </classes>
+  </test> <!-- SearchRegression(failed) -->
+</suite> <!-- Failed suite [Swiggy] -->
