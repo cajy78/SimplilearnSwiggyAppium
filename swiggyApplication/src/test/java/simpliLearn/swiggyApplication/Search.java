@@ -143,15 +143,23 @@ public class Search extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				Thread.sleep(5000);
-				List<MobileElement> searchResults = driver
-						.findElementsByXPath("//*[contains(@text,'" + searchTypeValue + "')]");
+				//Thread.sleep(5000);
+				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				wait.until(ExpectedConditions
+						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
+				List<MobileElement> searchResults = driver.findElementsByXPath(
+						"/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+						+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+						+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+						+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+						+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+						+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 
-				if (searchResults.size() > 1) {
+				if (searchResults.size() >= 1) {
 					Assert.assertTrue(true);
-				} else if (searchResults.size() <= 1) {
+				} else if (searchResults.size() < 1) {
 					throw new RuntimeException(
 							"A problem occurred due to which no search results were found or search value has a problem");
 				}

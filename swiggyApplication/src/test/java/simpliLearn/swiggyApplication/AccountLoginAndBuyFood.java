@@ -206,9 +206,16 @@ public class AccountLoginAndBuyFood extends TestCase {
 				searchBar.sendKeys(searchTypeValue);
 				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				Thread.sleep(5000);
+				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getWaitTimeoutConfig()));
+				wait.until(ExpectedConditions
+						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
-						.findElementsByXPath("//*[contains(@text,'" + searchTypeValue + "')]");
+						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
 				takeScreenShot("SearchResultsFound", driver);
 

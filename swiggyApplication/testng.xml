@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Regression_Swiggy">
-<!-- 	<test thread-count="5" name="SearchRegression"> -->
+	<test thread-count="5" name="SearchRegression">
+		<parameter name="searchType" value="dish" />
+		<parameter name="searchTypeValue" value="fish" />
+		<classes>
+			<class name="simpliLearn.swiggyApplication.Search" />
+		</classes>
+	</test>
+<!-- 	<test thread-count="5" name="AccountLogin"> -->
+<!-- 		<parameter name="phoneNumber" value="9619127329" /> -->
 <!-- 		<parameter name="searchType" value="restaurant" /> -->
 <!-- 		<parameter name="searchTypeValue" value="Subway" /> -->
 <!-- 		<classes> -->
-<!-- 			<class name="simpliLearn.swiggyApplication.Search" /> -->
+<!-- 			<class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" /> -->
 <!-- 		</classes> -->
 <!-- 	</test> -->
-	<test thread-count="5" name="AccountLogin">
-		<parameter name="phoneNumber" value="9619127329" />
-		<parameter name="searchType" value="restaurant" />
-		<parameter name="searchTypeValue" value="Subway" />
-		<classes>
-			<class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" />
-		</classes>
-	</test>
 </suite> <!-- Swiggy -->
