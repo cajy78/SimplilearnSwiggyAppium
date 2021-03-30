@@ -122,7 +122,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 			editDetails.click();
 			MobileElement accountPhoneNumber = (MobileElement) driver.findElementById("in.swiggy.android:id/edit_account__phone_et");
 			String loggedInUser = accountPhoneNumber.getText();
-			System.out.println(accountPhoneNumber);
+			System.out.println(loggedInUser);
 			driver.navigate().back();
 			// Assert.assertEquals(userDetails, phoneNumber);
 		}
@@ -187,6 +187,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 						MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
 						addToCart.click();
 					}
+					driver.navigate().back();
 //
 //					MobileElement viewCart = (MobileElement) driver.findElementById("in.swiggy.android:id/cart_icon");
 //					viewCart.click();
