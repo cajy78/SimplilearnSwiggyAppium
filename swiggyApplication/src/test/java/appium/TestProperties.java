@@ -23,22 +23,24 @@ public class TestProperties {
 		getPropertiesFile();
 		return prop.getProperty("appium.serverurl");
 	}
-	
-	public static String getScreenshotDir()
-	{
+
+	public static String getScreenshotDir() {
 		getPropertiesFile();
 		return prop.getProperty("screenshot.location");
 	}
-	
-	public static String getImplicitWaitTimeoutConfig()
-	{
+
+	public static String getImplicitWaitTimeoutConfig() {
 		getPropertiesFile();
 		return prop.getProperty("implicitwait.timeout");
 	}
-	
-	public static String getExplicitWaitTimeoutConfig()
-	{
+
+	public static String getExplicitWaitTimeoutConfig() {
 		getPropertiesFile();
 		return prop.getProperty("explicitwait.timeout");
+	}
+
+	public static String getDefaultDeviceType() {
+		getPropertiesFile();
+		return prop.getProperty("device.type");
 	}
 }
