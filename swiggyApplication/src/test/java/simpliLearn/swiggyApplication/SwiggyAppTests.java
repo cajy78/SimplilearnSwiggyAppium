@@ -51,7 +51,7 @@ public class SwiggyAppTests extends TestCase {
 					"Parameter passed for Search Type is incorrect and should be either Resto or Restaurant or Dish or Food (ignore case)");
 		} else {
 
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			takeScreenShot("01_Splash_Screen", driver);
 			MobileElement initialLocation = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/set_location_text");
@@ -199,6 +199,12 @@ public class SwiggyAppTests extends TestCase {
 				takeScreenShot("04_OTP_entered_manually", driver);
 				otpSubmit.click();
 			}
+			
+			TouchAction action = new TouchAction(driver);
+			action.longPress(PointOption.point(310, 1160)).moveTo(PointOption.point(310, 800)).release()
+					.perform();
+			action.longPress(PointOption.point(310, 800)).moveTo(PointOption.point(310, 1160)).release()
+			.perform();
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.view.ViewGroup[@content-desc=\"EDIT\"]")));
 			MobileElement editDetails = (MobileElement) driver
@@ -321,7 +327,7 @@ public class SwiggyAppTests extends TestCase {
 			proceedToPay.click();
 			if (!presenceWaitByXPath("//*[contains(@text, 'BILL TOTAL')]")) {
 				takeScreenShot("12_Cancellation_Policy_Window", driver);
-				(new TouchAction(driver)).tap(PointOption.point(343, 1379)).perform();
+				(new TouchAction(driver)).tap(PointOption.point(517, 2207)).perform();
 			}
 			MobileElement billTotal = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
 			System.out.println("Total Bill to be paid is: " + billTotal.getText());

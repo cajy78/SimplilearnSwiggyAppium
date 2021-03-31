@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression_Swiggy]">
-  <test thread-count="5" verbose="0" name="SwiggyRegression(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression_Swiggy]">
+  <test thread-count="5" name="SwiggyRegression(failed)">
     <parameter name="phoneNumber" value="9619127329"/>
     <parameter name="searchType" value="dish"/>
     <parameter name="searchTypeValue" value="sandwich"/>
@@ -10,10 +10,11 @@
     <classes>
       <class name="simpliLearn.swiggyApplication.SwiggyAppTests">
         <methods>
-          <include name="runLoginTest" invocation-numbers="0"/>
+          <include name="runSearchTest"/>
+          <include name="runLoginTest"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="runBuyFoodTest" invocation-numbers="0"/>
+          <include name="runBuyFoodTest"/>
         </methods>
       </class> <!-- simpliLearn.swiggyApplication.SwiggyAppTests -->
     </classes>

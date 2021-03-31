@@ -1,5 +1,7 @@
-simpliLearn\swiggyApplication\Search$1.class
+simpliLearn\swiggyApplication\TestCase.class
+appium\TestProperties.class
 appium\AppiumSetup$1.class
-simpliLearn\swiggyApplication\AccountLoginAndBuyFood$1.class
+simpliLearn\swiggyApplication\SwiggyAppTests.class
 appium\AppiumSetup$DeviceTypes.class
 appium\AppiumSetup.class
+simpliLearn\swiggyApplication\SwiggyAppTests$1.class

@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression_Swiggy]">
-  <test thread-count="5" verbose="0" name="SearchRegression(failed)">
+  <test thread-count="5" verbose="0" name="SwiggyRegression(failed)">
+    <parameter name="phoneNumber" value="9619127329"/>
     <parameter name="searchType" value="dish"/>
     <parameter name="searchTypeValue" value="sandwich"/>
+    <parameter name="orderFoodBy" value="restaurant"/>
+    <parameter name="orderFood" value="mcdonalds"/>
     <classes>
-      <class name="simpliLearn.swiggyApplication.Search">
+      <class name="simpliLearn.swiggyApplication.SwiggyAppTests">
         <methods>
-          <include name="runSearchTest"/>
+          <include name="runLoginTest" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="runBuyFoodTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- simpliLearn.swiggyApplication.Search -->
+      </class> <!-- simpliLearn.swiggyApplication.SwiggyAppTests -->
     </classes>
-  </test> <!-- SearchRegression(failed) -->
-  <test thread-count="5" verbose="0" name="AccountLoginAndBuyFood(failed)">
-    <parameter name="phoneNumber" value="9619127329"/>
-    <parameter name="searchType" value="restaurant"/>
-    <parameter name="searchTypeValue" value="mcdonalds"/>
-    <classes>
-      <class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood">
-        <methods>
-          <include name="runAccountLogin"/>
-          <include name="buyFood"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- simpliLearn.swiggyApplication.AccountLoginAndBuyFood -->
-    </classes>
-  </test> <!-- AccountLoginAndBuyFood(failed) -->
+  </test> <!-- SwiggyRegression(failed) -->
 </suite> <!-- Failed suite [Regression_Swiggy] -->

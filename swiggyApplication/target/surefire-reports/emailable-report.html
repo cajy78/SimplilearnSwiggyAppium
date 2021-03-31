@@ -9,31 +9,64 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Regression_Swiggy</th></tr>
-<tr><td><a href="#t0">SearchRegression</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">24</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">AccountLoginAndBuyFood</a></td><td class="num">0</td><td class="num attn">2</td><td class="num">0</td><td class="num">3</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">0</th><th class="num attn">3</th><th class="num">0</th><th class="num">27</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">SwiggyRegression</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">226,266</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression_Swiggy</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SearchRegression &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">simpliLearn.swiggyApplication.Search</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1617168276564</td><td rowspan="1">0</td></tr><tr><th colspan="4">SearchRegression &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">simpliLearn.swiggyApplication.Search</td><td><a href="#m1">runSearchTest</a></td><td rowspan="1">1617168276563</td><td rowspan="1">0</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">AccountLoginAndBuyFood &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">simpliLearn.swiggyApplication.Search</td><td><a href="#m2">setup</a></td><td rowspan="1">1617168276515</td><td rowspan="1">17</td></tr><tr><th colspan="4">AccountLoginAndBuyFood &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="2">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</td><td><a href="#m3">setup</a></td><td rowspan="1">1617168276607</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m4">tearDown</a></td><td rowspan="1">1617168276620</td><td rowspan="1">0</td></tr><tr><th colspan="4">AccountLoginAndBuyFood &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="2">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</td><td><a href="#m5">buyFood</a></td><td rowspan="1">1617168276610</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m6">runAccountLogin</a></td><td rowspan="1">1617168276609</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression_Swiggy</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SwiggyRegression &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">simpliLearn.swiggyApplication.SwiggyAppTests</td><td><a href="#m0">runBuyFoodTest</a></td><td rowspan="1">1617178692665</td><td rowspan="1">145043</td></tr><tr class="failedeven"><td><a href="#m1">runLoginTest</a></td><td rowspan="1">1617178663618</td><td rowspan="1">28975</td></tr><tr><th colspan="4">SwiggyRegression &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">simpliLearn.swiggyApplication.SwiggyAppTests</td><td><a href="#m2">runSearchTest</a></td><td rowspan="1">1617178639597</td><td rowspan="1">23926</td></tr></tbody>
 </table>
-<h2>SearchRegression</h2><h3 id="m0">simpliLearn.swiggyApplication.Search#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">simpliLearn.swiggyApplication.Search#runSearchTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
-	at simpliLearn.swiggyApplication.TestCase.initiateDeviceType(TestCase.java:35)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>AccountLoginAndBuyFood</h2><h3 id="m2">simpliLearn.swiggyApplication.Search#setup</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
-	at simpliLearn.swiggyApplication.TestCase.initiateDeviceType(TestCase.java:35)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#setup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#buyFood</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
-	at simpliLearn.swiggyApplication.TestCase.initiateDeviceType(TestCase.java:35)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">simpliLearn.swiggyApplication.AccountLoginAndBuyFood#runAccountLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
-	at simpliLearn.swiggyApplication.TestCase.initiateDeviceType(TestCase.java:35)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>SwiggyRegression</h2><h3 id="m0">simpliLearn.swiggyApplication.SwiggyAppTests#runBuyFoodTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>restaurant</td><td>mcdonalds</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy&apos;s OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 62c4be23-6013-445b-a4f7-a20de36bcb3b
+*** Element info: {Using=xpath, value=//*[contains(@text, &apos;BILL TOTAL&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:152)
+	at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+	at simpliLearn.swiggyApplication.SwiggyAppTests.runBuyFoodTest(SwiggyAppTests.java:326)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">simpliLearn.swiggyApplication.SwiggyAppTests#runLoginTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>9619127329</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;CAJETAN-PC&apos;, ip: &apos;172.17.240.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy&apos;s OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 62c4be23-6013-445b-a4f7-a20de36bcb3b
+*** Element info: {Using=id, value=in.swiggy.android:id/edit_account__phone_et}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
+	at simpliLearn.swiggyApplication.SwiggyAppTests.runLoginTest(SwiggyAppTests.java:209)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">simpliLearn.swiggyApplication.SwiggyAppTests#runSearchTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>dish</td><td>sandwich</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

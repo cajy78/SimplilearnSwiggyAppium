@@ -1,8 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 7.898 s <<< FAILURE! - in TestSuite
-setup(simpliLearn.swiggyApplication.Search)  Time elapsed: 7.681 s  <<< FAILURE!
-java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 233.643 s <<< FAILURE! - in TestSuite
+runLoginTest(simpliLearn.swiggyApplication.SwiggyAppTests)  Time elapsed: 28.804 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy's OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 62c4be23-6013-445b-a4f7-a20de36bcb3b
+*** Element info: {Using=id, value=in.swiggy.android:id/edit_account__phone_et}
+	at simpliLearn.swiggyApplication.SwiggyAppTests.runLoginTest(SwiggyAppTests.java:209)
+
+runBuyFoodTest(simpliLearn.swiggyApplication.SwiggyAppTests)  Time elapsed: 145.042 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., databaseEnabled: false, desired: {appActivity: in.swiggy.android.activitie..., appPackage: in.swiggy.android, appWaitActivity: in.swiggy.android.activitie..., deviceName: Cajy's OnePlus 8T, ensureWebviewsHavePages: true, platformName: android, platformVersion: 11}, deviceApiLevel: 30, deviceManufacturer: OnePlus, deviceModel: KB2001, deviceName: efe862bd, deviceScreenDensity: 450, deviceScreenSize: 1080x2400, deviceUDID: efe862bd, ensureWebviewsHavePages: true, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.8125, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 104, takesScreenshot: true, viewportRect: {height: 2148, left: 0, top: 104, width: 1080}, warnings: {}, webStorageEnabled: false}
+Session ID: 62c4be23-6013-445b-a4f7-a20de36bcb3b
+*** Element info: {Using=xpath, value=//*[contains(@text, 'BILL TOTAL')]}
+	at simpliLearn.swiggyApplication.SwiggyAppTests.runBuyFoodTest(SwiggyAppTests.java:326)
 
