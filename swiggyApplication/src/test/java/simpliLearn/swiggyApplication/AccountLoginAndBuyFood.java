@@ -105,11 +105,22 @@ public class AccountLoginAndBuyFood extends TestCase {
 			continueLogin.click();
 			Thread.sleep(2000);
 			takeScreenShot("03_Waiting_OTP", driver);
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("in.swiggy.android:id/forgotPasswordSubmitBtn")));
-			MobileElement otpSubmit = (MobileElement) driver
-					.findElementById("in.swiggy.android:id/forgotPasswordSubmitBtn");
-			takeScreenShot("04_OTP_entered_manually", driver);
-			otpSubmit.click();
+
+			if (TestProperties.getDefaultDeviceType().equals("Oneplus8T")) {
+				wait.until(ExpectedConditions
+						.visibilityOfElementLocated(By.id("com.google.android.gms:id/positive_button")));
+				takeScreenShot("03_OTP_Recevied_Android_System_automation", driver);
+				MobileElement otpConfirmSubmit = (MobileElement) driver
+						.findElementById("com.google.android.gms:id/positive_button");
+				otpConfirmSubmit.click();
+			} else {
+				wait.until(
+						ExpectedConditions.elementToBeClickable(By.id("in.swiggy.android:id/forgotPasswordSubmitBtn")));
+				MobileElement otpSubmit = (MobileElement) driver
+						.findElementById("in.swiggy.android:id/forgotPasswordSubmitBtn");
+				takeScreenShot("04_OTP_entered_manually", driver);
+				otpSubmit.click();
+			}
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.view.ViewGroup[@content-desc=\"EDIT\"]")));
 			MobileElement editDetails = (MobileElement) driver
