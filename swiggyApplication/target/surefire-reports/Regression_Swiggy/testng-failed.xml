@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Regression_Swiggy]">
   <test thread-count="5" verbose="0" name="SearchRegression(failed)">
-    <parameter name="searchType" value="restaurant"/>
-    <parameter name="searchTypeValue" value="Subway"/>
+    <parameter name="searchType" value="dish"/>
+    <parameter name="searchTypeValue" value="sandwich"/>
     <classes>
       <class name="simpliLearn.swiggyApplication.Search">
         <methods>
@@ -14,7 +14,7 @@
       </class> <!-- simpliLearn.swiggyApplication.Search -->
     </classes>
   </test> <!-- SearchRegression(failed) -->
-  <test thread-count="5" verbose="0" name="AccountLogin(failed)">
+  <test thread-count="5" verbose="0" name="AccountLoginAndBuyFood(failed)">
     <parameter name="phoneNumber" value="9619127329"/>
     <parameter name="searchType" value="restaurant"/>
     <parameter name="searchTypeValue" value="mcdonalds"/>
@@ -28,5 +28,5 @@
         </methods>
       </class> <!-- simpliLearn.swiggyApplication.AccountLoginAndBuyFood -->
     </classes>
-  </test> <!-- AccountLogin(failed) -->
+  </test> <!-- AccountLoginAndBuyFood(failed) -->
 </suite> <!-- Failed suite [Regression_Swiggy] -->

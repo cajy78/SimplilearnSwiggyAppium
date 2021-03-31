@@ -1,29 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 45.256 s <<< FAILURE! - in TestSuite
-setup(simpliLearn.swiggyApplication.Search)  Time elapsed: 44.726 s  <<< FAILURE!
-org.openqa.selenium.SessionNotCreatedException: 
-Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
-Caused by: java.lang.reflect.InvocationTargetException
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
-Caused by: org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'CAJETAN-PC', ip: '172.17.240.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'in.swiggy.android' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'in.swiggy.android.activities.NewUserExperienceActivity' or 'in.swiggy.android.in.swiggy.android.activities.NewUserExperienceActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
-	at simpliLearn.swiggyApplication.Search.setup(Search.java:35)
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 7.898 s <<< FAILURE! - in TestSuite
+setup(simpliLearn.swiggyApplication.Search)  Time elapsed: 7.681 s  <<< FAILURE!
+java.lang.RuntimeException: DeviceType entered does not exist for this test environment.
+	at simpliLearn.swiggyApplication.Search.setup(Search.java:32)
 
