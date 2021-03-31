@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Regression_Swiggy">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Regression_Swiggy" title="simpliLearn.swiggyApplication.Search" hash-for-method="runSearchTest(dish, sandwich)">runSearchTest(dish, sandwich)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_Swiggy" title="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" hash-for-method="buyFood(restaurant, mcdonalds)">buyFood(restaurant, mcdonalds)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Regression_Swiggy" title="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" hash-for-method="runAccountLogin(9619127329)">runAccountLogin(9619127329)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Regression_Swiggy -->
@@ -120,15 +125,23 @@
           <div class="suite-Regression_Swiggy-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">simpliLearn.swiggyApplication.Search</span>
+              <span class="class-name">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runSearchTest(dish, sandwich)">
-                  </a> <!-- runSearchTest(dish, sandwich) -->
-                  <span class="method-name">runSearchTest</span>
-                  <span class="parameters">(dish, sandwich)</span>
+                  <a name="buyFood(restaurant, mcdonalds)">
+                  </a> <!-- buyFood(restaurant, mcdonalds) -->
+                  <span class="method-name">buyFood</span>
+                  <span class="parameters">(restaurant, mcdonalds)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runAccountLogin(9619127329)">
+                  </a> <!-- runAccountLogin(9619127329) -->
+                  <span class="method-name">runAccountLogin</span>
+                  <span class="parameters">(9619127329)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,13 +156,14 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Regression_Swiggy&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;SearchRegression&quot;&gt;
-    &lt;parameter name=&quot;searchType&quot; value=&quot;dish&quot;/&gt;
-    &lt;parameter name=&quot;searchTypeValue&quot; value=&quot;sandwich&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;AccountLoginAndBuyFood&quot;&gt;
+    &lt;parameter name=&quot;phoneNumber&quot; value=&quot;9619127329&quot;/&gt;
+    &lt;parameter name=&quot;searchType&quot; value=&quot;restaurant&quot;/&gt;
+    &lt;parameter name=&quot;searchTypeValue&quot; value=&quot;mcdonalds&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;simpliLearn.swiggyApplication.Search&quot;/&gt;
+      &lt;class name=&quot;simpliLearn.swiggyApplication.AccountLoginAndBuyFood&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SearchRegression --&gt;
+  &lt;/test&gt; &lt;!-- AccountLoginAndBuyFood --&gt;
 &lt;/suite&gt; &lt;!-- Regression_Swiggy --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +175,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">SearchRegression (1 class)</span>
+                <span class="test-name">AccountLoginAndBuyFood (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,16 +201,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'runSearchTest')
-data.setCell(0, 2, 'simpliLearn.swiggyApplication.Search')
-data.setCell(0, 3, 25335);
+data.setCell(0, 1, 'buyFood')
+data.setCell(0, 2, 'simpliLearn.swiggyApplication.AccountLoginAndBuyFood')
+data.setCell(0, 3, 117709);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runAccountLogin')
+data.setCell(1, 2, 'simpliLearn.swiggyApplication.AccountLoginAndBuyFood')
+data.setCell(1, 3, 47159);
 window.suiteTableData['Regression_Swiggy']= { tableData: data, tableDiv: 'times-div-Regression_Swiggy'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Regression_Swiggy">
               </div> <!-- times-div-Regression_Swiggy -->
             </div> <!-- times-div -->
@@ -222,19 +240,23 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">simpliLearn.swiggyApplication.Search</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
+              <div class="chronological-class-name">simpliLearn.swiggyApplication.AccountLoginAndBuyFood</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
+              </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">runSearchTest(dish, sandwich)</span>
-                <span class="method-start">27660 ms</span>
+                <span class="method-name">runAccountLogin(9619127329)</span>
+                <span class="method-start">30617 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
+              <div class="test-method">
+                <span class="method-name">buyFood(restaurant, mcdonalds)</span>
+                <span class="method-start">77829 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">53008 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">195787 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

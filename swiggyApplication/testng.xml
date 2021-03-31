@@ -8,13 +8,13 @@
 			<class name="simpliLearn.swiggyApplication.Search" />
 		</classes>
 	</test>
-<!-- 	<test thread-count="5" name="AccountLogin"> -->
-<!-- 		<parameter name="phoneNumber" value="9619127329" /> -->
-<!-- 		<parameter name="searchType" value="dish" /> -->
-<!-- 		<parameter name="searchTypeValue" value="burger" /> -->
-<!-- 		<classes> -->
-<!-- 			<class -->
-<!-- 				name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<test thread-count="5" name="AccountLoginAndBuyFood">
+		<parameter name="phoneNumber" value="9619127329" />
+		<parameter name="searchType" value="restaurant" />
+		<parameter name="searchTypeValue" value="mcdonalds" />
+		<classes>
+			<class
+				name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood" />
+		</classes>
+	</test>
 </suite> <!-- Swiggy -->

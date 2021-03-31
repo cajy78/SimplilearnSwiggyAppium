@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Regression_Swiggy]">
-  <test thread-count="5" name="AccountLogin(failed)">
+  <test thread-count="5" name="AccountLoginAndBuyFood(failed)">
     <parameter name="phoneNumber" value="9619127329"/>
     <parameter name="searchType" value="restaurant"/>
     <parameter name="searchTypeValue" value="mcdonalds"/>
     <classes>
       <class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood">
         <methods>
+          <include name="runAccountLogin" invocation-numbers="0"/>
           <include name="buyFood" invocation-numbers="0"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- simpliLearn.swiggyApplication.AccountLoginAndBuyFood -->
     </classes>
-  </test> <!-- AccountLogin(failed) -->
+  </test> <!-- AccountLoginAndBuyFood(failed) -->
 </suite> <!-- Failed suite [Regression_Swiggy] -->

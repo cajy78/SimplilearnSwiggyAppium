@@ -50,8 +50,6 @@ public class AccountLoginAndBuyFood extends TestCase {
 			throw new RuntimeException("Phone number entered is either invalid or is not 10 digits");
 		} else {
 
-			Thread.sleep(3000);
-			takeScreenShot("SplashScreen", driver);
 			MobileElement initialLocation = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/set_location_text");
 			takeScreenShot("Location", driver);
@@ -93,26 +91,30 @@ public class AccountLoginAndBuyFood extends TestCase {
 
 			MobileElement account = (MobileElement) driver.findElementById("in.swiggy.android:id/bottom_bar_account");
 			account.click();
-
 			MobileElement loginButton = (MobileElement) driver.findElementByXPath("//*[@text=\"LOGIN\"]");
 			loginButton.click();
-
+			takeScreenShot("01_Login_screen", driver);
 			driver.navigate().back();
 			MobileElement number = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/loginCheckPhoneNumberEditText");
 			number.click();
 			number.sendKeys(phoneNumber);
+			takeScreenShot("02_Phone_number_entered", driver);
 			MobileElement continueLogin = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/loginCheckButton");
 			continueLogin.click();
+			Thread.sleep(2000);
+			takeScreenShot("03_Waiting_OTP", driver);
 			wait.until(ExpectedConditions.elementToBeClickable(By.id("in.swiggy.android:id/forgotPasswordSubmitBtn")));
 			MobileElement otpSubmit = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/forgotPasswordSubmitBtn");
+			takeScreenShot("04_OTP_entered_manually", driver);
 			otpSubmit.click();
 			wait.until(ExpectedConditions
 					.elementToBeClickable(By.xpath("//android.view.ViewGroup[@content-desc=\"EDIT\"]")));
 			MobileElement editDetails = (MobileElement) driver
 					.findElementByXPath("//android.view.ViewGroup[@content-desc=\"EDIT\"]");
+			takeScreenShot("05_Account_logged_in", driver);
 			editDetails.click();
 			MobileElement accountPhoneNumber = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/edit_account__phone_et");
@@ -134,17 +136,13 @@ public class AccountLoginAndBuyFood extends TestCase {
 			MobileElement initiateSearch = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/bottom_bar_explore");
 			initiateSearch.click();
-			takeScreenShot("SearchClicked", driver);
 			MobileElement searchBar = (MobileElement) driver
 					.findElementByXPath("//*[@text=\"Search for restaurants and food\"]");
 			searchBar.click();
-
+			takeScreenShot("06_SearchToBuy_clicked", driver);
 			if (searchType.equalsIgnoreCase("Restaurant") || searchType.equalsIgnoreCase("Resto")) {
 				searchBar.sendKeys(searchTypeValue);
-				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				wait.until(ExpectedConditions
-						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
 						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
@@ -153,28 +151,34 @@ public class AccountLoginAndBuyFood extends TestCase {
 								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
-				takeScreenShot("SearchResultsFound", driver);
+				takeScreenShot("07_SearchToBuy_Restaurant_results", driver);
 				MobileElement restaurantSearch;
 
 				if (searchResults.size() >= 1) {
-					restaurantSearch = (MobileElement) searchResults.get(1);
+					restaurantSearch = (MobileElement) searchResults.get(0);
 					restaurantSearch.click();
 					if (checkRatingDialogPopup())
 						driver.navigate().back();
-					takeScreenShot("RestaurantClicked", driver);
+					takeScreenShot("07_SearchToBuy_Restaurant_opened", driver);
 					TouchAction action = new TouchAction(driver);
-					action.longPress(PointOption.point(310, 1160)).moveTo(PointOption.point(310, 900)).release()
+					action.longPress(PointOption.point(310, 1160)).moveTo(PointOption.point(310, 850)).release()
 							.perform();
+					takeScreenShot("08_SearchToBuy_Restaurant_Scrolled_down", driver);
 					MobileElement addItem = (MobileElement) driver
 							.findElementByXPath("//*[@content-desc=\"Add Item\"]");
 					addItem.click();
+					takeScreenShot("09_SearchToBuy_Restaurant_Add-item_tapped", driver);
 					while (checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button")) {
+						int ctr = 1;
 						MobileElement continueButton = (MobileElement) driver
 								.findElementById("in.swiggy.android:id/progressive_variants_continue_button");
+						takeScreenShot(ctr + "_SearchToBuy_Restaurant_Item-Variant_continue", driver);
 						continueButton.click();
+						ctr = ctr + 1;
 					}
 					if (checkElementDisplayedByXpath("//*[@text=\"ADD ITEM\"]")) {
 						MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
+						takeScreenShot("10_SearchToBuy_Restaurant_Item-variant_add", driver);
 						addToCart.click();
 						Thread.sleep(2000);
 					}
@@ -182,10 +186,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 				}
 			} else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
 				searchBar.sendKeys(searchTypeValue);
-				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				wait.until(ExpectedConditions
-						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
 						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
@@ -194,16 +195,21 @@ public class AccountLoginAndBuyFood extends TestCase {
 								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
-				takeScreenShot("SearchResultsFound", driver);
+				takeScreenShot("07_SearchToBuy_Dish_results", driver);
 				MobileElement addItem = (MobileElement) driver.findElementByXPath("//*[@content-desc=\"Add Item\"]");
 				addItem.click();
+				takeScreenShot("08_SearchToBuy_Dish_Add-Item_tapped", driver);
 				while (checkElementDisplayedById("in.swiggy.android:id/progressive_variants_continue_button")) {
+					int ctr = 1;
 					MobileElement continueButton = (MobileElement) driver
 							.findElementById("in.swiggy.android:id/progressive_variants_continue_button");
+					takeScreenShot(ctr + "_SearchToBuy_Dish_Item-Variant_continue", driver);
 					continueButton.click();
+					ctr = ctr + 1;
 				}
 				if (checkElementDisplayedByXpath("//*[@text=\"ADD ITEM\"]")) {
 					MobileElement addToCart = (MobileElement) driver.findElementByXPath("//*[@text=\"ADD ITEM\"]");
+					takeScreenShot("09_SearchToBuy_Dish_Item-variant_add", driver);
 					addToCart.click();
 				}
 			}
@@ -214,6 +220,7 @@ public class AccountLoginAndBuyFood extends TestCase {
 			if (checkElementDisplayedByXpath("//*[contains(@text,\"SELECT ADDRESS\")]")) {
 				MobileElement selectAddress = (MobileElement) driver
 						.findElementByXPath("//*[contains(@text,\"SELECT ADDRESS\")]");
+				takeScreenShot("12_Select-Address_Displayed", driver);
 				selectAddress.click();
 				MobileElement addressLine = (MobileElement) driver
 						.findElementById("in.swiggy.android:id/cartAddressLineOne");
@@ -221,30 +228,15 @@ public class AccountLoginAndBuyFood extends TestCase {
 			}
 
 			MobileElement proceedToPay = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'PAY')]");
+			takeScreenShot("11_View-Cart", driver);
 			proceedToPay.click();
-
-//			if(checkElementDisplayedById("in.swiggy.android:id/cartCancelParent"))
-//			{
-			// MobileElement cancelFrame = (MobileElement)
-			// driver.findElementById("in.swiggy.android:id/cartCancelParent");
-//				driver.switchTo().frame(driver.findElementById("in.swiggy.android:id/cartCancelParent"));
-
-//				if (clickabilityWaitById("in.swiggy.android:id/button",wait)) {
-//					if(checkElementDisplayedById("in.swiggy.android:id/button")) {
-//					MobileElement cancelationPolicyUnderstand = (MobileElement) driver
-//							.findElementById("in.swiggy.android:id/button");
-//					cancelationPolicyUnderstand.click();
-//					}
-//				}
-
-//				driver.switchTo().parentFrame();
-//			}
-
-			Thread.sleep(3500);
-			(new TouchAction(driver)).tap(PointOption.point(343, 1379)).perform();
-
+			if (!presenceWaitByXPath("//*[contains(@text, 'BILL TOTAL')]")) {
+				takeScreenShot("12_Cancellation_Policy_Window", driver);
+				(new TouchAction(driver)).tap(PointOption.point(343, 1379)).perform();
+			}
 			MobileElement billTotal = (MobileElement) driver.findElementByXPath("//*[contains(@text, 'BILL TOTAL')]");
 			System.out.println("Total Bill to be paid is: " + billTotal.getText());
+			takeScreenShot("13_Payment_Method_Section", driver);
 			if (checkElementDisplayedByXpath("//*[contains(@text,\"PREFERRED PAYMENT\")]")) {
 				Assert.assertTrue(true);
 			} else {
@@ -262,14 +254,15 @@ public class AccountLoginAndBuyFood extends TestCase {
 		}
 	}
 
-//	private boolean clickabilityWaitById(String id, WebDriverWait wait) {
-//		try {
-//			wait.until(ExpectedConditions.elementToBeClickable(By.id(id)));
-//			return true;
-//		} catch (Exception e) {
-//			return false;
-//		}
-//	}
+	private boolean presenceWaitByXPath(String xpath) {
+		try {
+			WebDriverWait cancelPolicyWait = new WebDriverWait(driver, 4);
+			cancelPolicyWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
 	private boolean checkElementDisplayedByXpath(String xpath) {
 		try {
