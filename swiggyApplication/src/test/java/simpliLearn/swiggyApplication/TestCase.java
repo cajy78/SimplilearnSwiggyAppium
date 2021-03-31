@@ -32,7 +32,7 @@ public class TestCase {
 			deviceType = DeviceTypes.Android7;
 			break;
 		default:
-			throw new RuntimeException("DeviceType entered does not exist for this test environment.");
+			throw new RuntimeException("DeviceType entered in configuration does not exist for this test environment.");
 		}
 		return deviceType;
 	}
