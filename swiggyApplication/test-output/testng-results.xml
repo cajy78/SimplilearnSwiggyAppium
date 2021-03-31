@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression_Swiggy" duration-ms="173432" started-at="2021-03-30T15:52:00Z" finished-at="2021-03-30T15:54:53Z">
+  <suite name="Regression_Swiggy" duration-ms="26891" started-at="2021-03-31T04:00:25Z" finished-at="2021-03-31T04:00:52Z">
     <groups>
     </groups>
-    <test name="AccountLogin" duration-ms="173432" started-at="2021-03-30T15:52:00Z" finished-at="2021-03-30T15:54:53Z">
-      <class name="simpliLearn.swiggyApplication.AccountLoginAndBuyFood">
-        <test-method status="PASS" signature="setup()[pri:0, instance:simpliLearn.swiggyApplication.AccountLoginAndBuyFood@50a638b5]" name="setup" is-config="true" duration-ms="16653" started-at="2021-03-30T15:52:00Z" finished-at="2021-03-30T15:52:16Z">
+    <test name="SearchRegression" duration-ms="26891" started-at="2021-03-31T04:00:25Z" finished-at="2021-03-31T04:00:52Z">
+      <class name="simpliLearn.swiggyApplication.Search">
+        <test-method status="PASS" signature="setup()[pri:0, instance:simpliLearn.swiggyApplication.Search@31d7b7bf]" name="setup" is-config="true" duration-ms="27474" started-at="2021-03-31T03:59:57Z" finished-at="2021-03-31T04:00:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="runAccountLogin(java.lang.String)[pri:2, instance:simpliLearn.swiggyApplication.AccountLoginAndBuyFood@50a638b5]" name="runAccountLogin" duration-ms="54863" started-at="2021-03-30T15:52:17Z" finished-at="2021-03-30T15:53:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9619127329]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runAccountLogin -->
-        <test-method status="PASS" signature="buyFood(java.lang.String, java.lang.String)[pri:3, instance:simpliLearn.swiggyApplication.AccountLoginAndBuyFood@50a638b5]" name="buyFood" duration-ms="101868" started-at="2021-03-30T15:53:11Z" finished-at="2021-03-30T15:54:53Z">
+        <test-method status="PASS" signature="runSearchTest(java.lang.String, java.lang.String)[pri:1, instance:simpliLearn.swiggyApplication.Search@31d7b7bf]" name="runSearchTest" duration-ms="25335" started-at="2021-03-31T04:00:25Z" finished-at="2021-03-31T04:00:50Z">
           <params>
             <param index="0">
               <value>
@@ -31,18 +20,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[burger]]>
+                <![CDATA[sandwich]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- buyFood -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:simpliLearn.swiggyApplication.AccountLoginAndBuyFood@50a638b5]" name="tearDown" is-config="true" duration-ms="1057" started-at="2021-03-30T15:54:53Z" finished-at="2021-03-30T15:54:54Z">
+        </test-method> <!-- runSearchTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:simpliLearn.swiggyApplication.Search@31d7b7bf]" name="tearDown" is-config="true" duration-ms="1371" started-at="2021-03-31T04:00:50Z" finished-at="2021-03-31T04:00:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- simpliLearn.swiggyApplication.AccountLoginAndBuyFood -->
-    </test> <!-- AccountLogin -->
+      </class> <!-- simpliLearn.swiggyApplication.Search -->
+    </test> <!-- SearchRegression -->
   </suite> <!-- Regression_Swiggy -->
 </testng-results>

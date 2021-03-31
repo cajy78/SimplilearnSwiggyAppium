@@ -36,9 +36,8 @@ public class Search extends TestCase {
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(TestProperties.getImplicitWaitTimeoutConfig()),
 				TimeUnit.SECONDS);
 	}
-	
 
-	@Test(priority=1)
+	@Test(priority = 1)
 	@Parameters({ "searchType", "searchTypeValue" })
 	public void runSearchTest(String searchType, String searchTypeValue) throws Throwable {
 
@@ -48,12 +47,13 @@ public class Search extends TestCase {
 					"Parameter passed for Search Type is incorrect and should be either Resto or Restaurant or Dish or Food (ignore case)");
 		} else {
 
-			Thread.sleep(3000);
-			takeScreenShot("SplashScreen", driver);
+			Thread.sleep(2000);
+			takeScreenShot("01_Splash_Screen", driver);
 			MobileElement initialLocation = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/set_location_text");
-			takeScreenShot("Location", driver);
 			initialLocation.click();
+			Thread.sleep(2000);
+			takeScreenShot("02_Location_Permission_Popup", driver);
 
 			switch (testDeviceType) {
 			case GalaxyA30s_swiggy:
@@ -77,6 +77,7 @@ public class Search extends TestCase {
 						.findElementById("in.swiggy.android:id/location_description");
 				loc_emu7.click();
 				loc_emu7.sendKeys("Thane");
+				takeScreenShot("03_Location_emu_entered", driver);
 				MobileElement selectLoc = (MobileElement) driver.findElementByXPath("//*[@text=\"Thane West\"]");
 				selectLoc.click();
 				break;
@@ -86,58 +87,19 @@ public class Search extends TestCase {
 
 			MobileElement confLocation = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/google_place_search_title_text1");
-			takeScreenShot("LocationFound", driver);
+			takeScreenShot("04_Location_set", driver);
 			confLocation.click();
 			MobileElement initiateSearch = (MobileElement) driver
 					.findElementById("in.swiggy.android:id/bottom_bar_explore");
 			initiateSearch.click();
-			takeScreenShot("SearchClicked", driver);
 			MobileElement searchBar = (MobileElement) driver
-					.findElementByXPath("//*[@text=\"Search for restaurants and food\"]"); // ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText");
+					.findElementByXPath("//*[@text=\"Search for restaurants and food\"]");
 			searchBar.click();
+			takeScreenShot("05_Search_screen", driver);
 
 			if (searchType.equalsIgnoreCase("Restaurant") || searchType.equalsIgnoreCase("Resto")) {
 				searchBar.sendKeys(searchTypeValue);
-				takeScreenShot("SearchValueEntered", driver);
 				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getExplicitWaitTimeoutConfig()));
-				wait.until(ExpectedConditions
-						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
-				List<MobileElement> searchResults = driver
-						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
-								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
-								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
-								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
-								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");//// *[@id='in.swiggy.android:id/search_results']/android.view.ViewGroup");
-																											//// ///hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup
-				System.out.println("Number of elements found: " + searchResults.size());
-				takeScreenShot("SearchResultsFound", driver);
-				MobileElement restaurantSearch;
-
-				if (searchResults.size() >= 1) {
-					restaurantSearch = (MobileElement) searchResults.get(0);
-					restaurantSearch.click();
-					if (checkRatingDialogPopup())
-						driver.navigate().back();
-					String restName = driver.findElementById("in.swiggy.android:id/restaurant_name").getText();
-					takeScreenShot("RestaurantClicked", driver);
-					if (restName.contains(searchTypeValue))
-						Assert.assertTrue(true);
-					else
-						Assert.assertTrue(false);
-				} else if (searchResults.size() < 1) {
-					Assert.assertTrue(false);
-				} else {
-					Assert.assertTrue(false);
-				}
-			} else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
-				searchBar.sendKeys(searchTypeValue);
-				takeScreenShot("SearchValueEntered", driver);
-				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
-				WebDriverWait wait = new WebDriverWait(driver, Integer.parseInt(TestProperties.getExplicitWaitTimeoutConfig()));
-				wait.until(ExpectedConditions
-						.visibilityOfAllElementsLocatedBy(By.xpath("//*[@text='" + searchTypeValue + "']")));
 				List<MobileElement> searchResults = driver
 						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
@@ -146,9 +108,43 @@ public class Search extends TestCase {
 								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
 								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
 				System.out.println("Number of elements found: " + searchResults.size());
-				takeScreenShot("SearchResultsFound", driver);
+				takeScreenShot("06_Search_by_restaurant_results", driver);
+				MobileElement restaurantSearch;
 
 				if (searchResults.size() >= 1) {
+					restaurantSearch = (MobileElement) searchResults.get(0);
+					restaurantSearch.click();
+					if (checkRatingDialogPopup()) {
+						takeScreenShot("07_Rating_dialog_popup", driver);
+						driver.navigate().back();
+					}
+					String restName = driver.findElementById("in.swiggy.android:id/restaurant_name").getText();
+					if (restName.contains(searchTypeValue)) {
+						takeScreenShot("08_Restaurant_search_completed", driver);
+						Assert.assertTrue(true);
+					} else
+						Assert.assertTrue(false);
+				} else if (searchResults.size() < 1) {
+					throw new RuntimeException("Search was incomplete or found no results");
+				} else {
+					throw new RuntimeException("Search was incomplete or found no results");
+				}
+
+			} else if (searchType.equalsIgnoreCase("Dish") || searchType.equalsIgnoreCase("Food")) {
+				searchBar.sendKeys(searchTypeValue);
+				driver.executeScript("mobile:performEditorAction", ImmutableMap.of("action", "Search"));
+				List<MobileElement> searchResults = driver
+						.findElementsByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/android.widget.FrameLayout/android.widget.LinearLayout/"
+								+ "android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/"
+								+ "android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.FrameLayout"
+								+ "/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout"
+								+ "/androidx.recyclerview.widget.RecyclerView[2]/android.view.ViewGroup");
+				System.out.println("Number of elements found: " + searchResults.size());
+				takeScreenShot("06_Search_by_dish_name_results", driver);
+
+				if (searchResults.size() >= 1) {
+					takeScreenShot("07_Dishes_found_successfully", driver);
 					Assert.assertTrue(true);
 				} else if (searchResults.size() < 1) {
 					throw new RuntimeException(
